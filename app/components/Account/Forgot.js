@@ -21,15 +21,20 @@ class Forgot extends React.Component {
   render() {
     return (
       <div className="container">
-        <Messages messages={this.props.messages}/>
-        <form onSubmit={this.handleForgot.bind(this)}>
-          <h4>Forgot Password</h4>
-          <p>Enter your email address below and we'll send you password reset instructions.</p>
-          <label htmlFor="email">Email</label>
-          <input type="email" name="email" id="email" placeholder="Email" value={this.state.email} onChange={this.handleChange.bind(this)} autoFocus/>
-          <br/>
-          <button type="submit">Reset Password</button>
-        </form>
+        <div className="panel">
+          <div className="panel-body">
+            <Messages messages={this.props.messages} />
+            <form onSubmit={this.handleForgot.bind(this)}>
+              <legend>Forgot Password</legend>
+              <div className="form-group">
+                <p>Enter your email address below and we'll send you password reset instructions.</p>
+                <label htmlFor="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Email" className="form-control" autoFocus value={this.state.email} onChange={this.handleChange.bind(this)}/>
+              </div>
+              <button type="submit" className="btn btn-success">Reset Password</button>
+            </form>
+          </div>
+        </div>
       </div>
     );
   }
